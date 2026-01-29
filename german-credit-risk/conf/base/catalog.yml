@@ -1,0 +1,28 @@
+# Here you can define all your datasets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/catalog-data/introduction/#data-catalog
+# Camada RAW: Dados brutos como recebidos
+german_credit_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/german.data
+  load_args:
+    sep: ' '
+    header: null
+    names: [
+      "status_checking", "duration", "credit_history", "purpose", 
+      "credit_amount", "savings", "employment_since", "installment_rate",
+      "personal_status", "other_debtors", "residence_since", "property",
+      "age", "other_installment_plans", "housing", "number_credits",
+      "job", "people_liable", "telephone", "foreign_worker", "credit_risk"
+    ]
+
+
+german_credit_intermediate:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/german_credit_processed.parquet
+
+
+iv_report:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/iv_report.csv
