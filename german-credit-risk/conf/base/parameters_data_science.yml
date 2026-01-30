@@ -4,3 +4,7 @@
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/1.2.0/configuration/parameters.html
 target_col: "credit_risk"
+iv_threshold: 0.02
+model_options:
+  test_size: 0.2
+  random_state: 42

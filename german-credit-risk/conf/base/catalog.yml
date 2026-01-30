@@ -17,12 +17,19 @@ german_credit_raw:
       "job", "people_liable", "telephone", "foreign_worker", "credit_risk"
     ]
 
-
 german_credit_intermediate:
   type: pandas.ParquetDataset
   filepath: data/02_intermediate/german_credit_processed.parquet
 
-
 iv_report:
   type: pandas.CSVDataset
   filepath: data/08_reporting/iv_report.csv
+
+german_credit_primary:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/german_credit_primary.parquet
+
+credit_risk_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/credit_risk_model.pickle
+
