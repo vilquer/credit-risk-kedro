@@ -87,7 +87,8 @@ def split_data(data: pd.DataFrame, parameters: Dict) -> Tuple:
         random_state=parameters["random_state"]
     )
     
-    return X_train, X_test, y_train, y_test
+    # O PULO DO GATO: Converter Series para DataFrame para o Parquet aceitar
+    return X_train, X_test, y_train.to_frame(), y_test.to_frame()
 
 
 def create_model_input_table(data: pd.DataFrame) -> pd.DataFrame:
@@ -108,14 +109,13 @@ def create_model_input_table(data: pd.DataFrame) -> pd.DataFrame:
 def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> RandomForestClassifier:
     """Treina o modelo de Random Forest."""
     model = RandomForestClassifier(n_estimators=100, random_state=42)
-    model.fit(X_train, y_train)
+    model.fit(X_train, y_train.values.ravel())
     return model
 
 def evaluate_model(model: RandomForestClassifier, X_test: pd.DataFrame, y_test: pd.Series):
     """Calcula métricas de performance de risco (Gini e AUC)."""
     logger = logging.getLogger(__name__)
     
-    # Probabilidades para a classe positiva (Mau Pagador)
     y_probs = model.predict_proba(X_test)[:, 1]
     auc = roc_auc_score(y_test, y_probs)
     gini = 2 * auc - 1
@@ -123,4 +123,5 @@ def evaluate_model(model: RandomForestClassifier, X_test: pd.DataFrame, y_test: 
     logger.info(f"Model AUC: {auc:.4f}")
     logger.info(f"Model GINI: {gini:.4f}")
     
-    return gini
+    # Retornamos um dicionário para o JSONDataset conseguir salvar
+    return {"auc": auc, "gini": gini}

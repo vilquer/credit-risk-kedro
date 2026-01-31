@@ -3,6 +3,7 @@
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/catalog-data/introduction/#data-catalog
 # Camada RAW: Dados brutos como recebidos
+# Camada RAW: Dados brutos
 german_credit_raw:
   type: pandas.CSVDataset
   filepath: data/01_raw/german.data
@@ -17,19 +18,47 @@ german_credit_raw:
       "job", "people_liable", "telephone", "foreign_worker", "credit_risk"
     ]
 
+# Camada INTERMEDIATE: Dados limpos e legíveis (para humanos/EDA)
 german_credit_intermediate:
   type: pandas.ParquetDataset
   filepath: data/02_intermediate/german_credit_processed.parquet
+
+# Camada PRIMARY: Dados filtrados por IV (ainda em texto)
+german_credit_primary:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/german_credit_primary.parquet
+
+# Camada MODEL INPUT: Dados com Dummies (prontos para a máquina)
+german_credit_model_input:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/german_credit_model_input.parquet
+
+# Camada MODELS: Treino e Teste persistidos
+X_train:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_train.parquet
+
+X_test:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_test.parquet
+
+y_train:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_train.parquet
+
+y_test:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_test.parquet
+
+# Artefatos: Modelo e Relatórios
+credit_risk_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/credit_risk_model.pickle
 
 iv_report:
   type: pandas.CSVDataset
   filepath: data/08_reporting/iv_report.csv
 
-german_credit_primary:
-  type: pandas.ParquetDataset
-  filepath: data/03_primary/german_credit_primary.parquet
-
-credit_risk_model:
-  type: pickle.PickleDataset
-  filepath: data/06_models/credit_risk_model.pickle
-
+performance_metric:
+  type: json.JSONDataset
+  filepath: data/08_reporting/performance_metric.json
