@@ -2,7 +2,8 @@
 
 Este é um projeto de caráter técnico e fundamental, desenvolvido com o objetivo central de explorar e demonstrar as capacidades do framework Kedro e a aplicação de princípios de MLOps. O foco aqui não é apenas a performance preditiva, mas a estruturação de um pipeline de dados robusto, modular e persistente.
 
-![Kedro Viz](img/viz.png)
+
+![kedro viz](https://github.com/vilquer/credit-risk-kedro/blob/0b9ceabdd429911285fb647b92480337defd7170/img/viz.png)
 
 ## 📋 Visão Geral do Pipeline
 
@@ -20,7 +21,7 @@ O projeto foi estruturado utilizando o framework **Kedro**, dividindo a lógica 
     
 6. **Reporting**: Avaliação de performance focada em métricas de risco (**Gini** e **AUC**).
 
-   ![dados](img/data.png)
+   ![dados](https://github.com/vilquer/credit-risk-kedro/blob/0b9ceabdd429911285fb647b92480337defd7170/img/data.png)
 
 ---
 
@@ -96,6 +97,7 @@ O modelo é avaliado automaticamente, gerando um relatório em `data/08_reportin
 
 ## 👨‍💻 Autor
 
-**Vilquer de Oliveira**
+ [<img src="https://avatars.githubusercontent.com/u/52363892?v=4" width=115><br><sub><b>Vilquer de Oliveira</b></sub>](https://github.com/vilquer) 
+
 
 _Data Scientist | Tech Lead | Especialista em IA e Engenharia de Software_
