@@ -1,6 +1,8 @@
 # German Credit Risk Scorecard with Kedro 🚀
 
-Este projeto implementa um pipeline de **Machine Learning de ponta a ponta** para predição de risco de crédito, utilizando o dataset _German Credit_. O foco principal é a aplicação de práticas de **MLOps**, garantindo rastreabilidade, modularidade e interpretabilidade — requisitos essenciais em ambientes bancários.
+Este é um projeto de caráter técnico e fundamental, desenvolvido com o objetivo central de explorar e demonstrar as capacidades do framework Kedro e a aplicação de princípios de MLOps. O foco aqui não é apenas a performance preditiva, mas a estruturação de um pipeline de dados robusto, modular e persistente.
+
+![Kedro Viz](img/viz.png)
 
 ## 📋 Visão Geral do Pipeline
 
@@ -17,7 +19,8 @@ O projeto foi estruturado utilizando o framework **Kedro**, dividindo a lógica 
 5. **Models**: Treinamento de Random Forest e persistência do modelo (Pickle).
     
 6. **Reporting**: Avaliação de performance focada em métricas de risco (**Gini** e **AUC**).
-    
+
+   ![dados](img/data.png)
 
 ---
 
