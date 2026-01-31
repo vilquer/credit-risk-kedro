@@ -20,7 +20,7 @@ O projeto foi estruturado utilizando o framework **Kedro**, dividindo a lógica 
     
 6. **Reporting**: Avaliação de performance focada em métricas de risco (**Gini** e **AUC**).
 
-   ![Kedro Viz](img/data.png)
+   ![dados](img/data.png)
 
 ---
 
