@@ -1,9 +1,10 @@
 # German Credit Risk Scorecard with Kedro 🚀
 
-Este é um projeto de caráter técnico e fundamental, desenvolvido com o objetivo central de explorar e demonstrar as capacidades do framework Kedro e a aplicação de princípios de MLOps. O foco aqui não é apenas a performance preditiva, mas a estruturação de um pipeline de dados robusto, modular e persistente.
+Este é um projeto de caráter técnico e fundamental, desenvolvido com o objetivo central de explorar e demonstrar as capacidades do framework Kedro e a aplicação de princípios de MLOps.   
+O foco aqui não é apenas a performance preditiva, mas a estruturação de um pipeline de dados robusto, modular e persistente.
 
+<img src="https://github.com/vilquer/credit-risk-kedro/blob/0b9ceabdd429911285fb647b92480337defd7170/img/viz.png" width= 80% height=80%>
 
-![kedro viz](https://github.com/vilquer/credit-risk-kedro/blob/0b9ceabdd429911285fb647b92480337defd7170/img/viz.png)
 
 ## 📋 Visão Geral do Pipeline
 
@@ -21,7 +22,9 @@ O projeto foi estruturado utilizando o framework **Kedro**, dividindo a lógica 
     
 6. **Reporting**: Avaliação de performance focada em métricas de risco (**Gini** e **AUC**).
 
-   ![dados](https://github.com/vilquer/credit-risk-kedro/blob/0b9ceabdd429911285fb647b92480337defd7170/img/data.png)
+
+<img src="https://github.com/vilquer/credit-risk-kedro/blob/0b9ceabdd429911285fb647b92480337defd7170/img/data.png" width= 50% height=50%>
+
 
 ---
 
